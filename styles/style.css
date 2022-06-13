@@ -1,0 +1,329 @@
+/* *****Paramatros generales***** */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  body{
+    background-color:#262626;
+    color: whitesmoke;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* *****Imagen Deslizante***** */
+  .slider{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+  }
+
+  .imagen{
+      /* width: calc(100vmin - 1rem);
+      height: calc((100vmin - 1rem)/1.5); */
+      width: 100%;
+      height: calc((100vmin - 5rem));
+      background-color: transparent;
+      background-image: url("https://www.bn.gov.ar/web/galeria/Exterior%20Biblioteca/DJI_0018.JPG");
+      background-size:cover;
+      animation: slider 10s linear 2s infinite none;
+  }
+
+  @keyframes slider {
+      30%{background-image: url("https://www.bn.gov.ar/web/galeria/Exterior%20Biblioteca/DJI_0018.JPG");}
+      33%{background-image: url("https://viajes.nationalgeographic.com.es/medio/2018/10/23/biblioteca-de-la-basilica-de-san-francisco-lima_cf931a85_1500x998.jpg");}
+      63%{background-image: url("https://viajes.nationalgeographic.com.es/medio/2018/10/23/biblioteca-de-la-basilica-de-san-francisco-lima_cf931a85_1500x998.jpg");}
+      66%{background-image: url("https://www.lagacetadesalamanca.es/binrepository/768x513/0c80/768d432/none/25207907/RKKI/lme0774_1-3324068_20220110183743.jpg");}
+      97%{background-image: url("https://www.lagacetadesalamanca.es/binrepository/768x513/0c80/768d432/none/25207907/RKKI/lme0774_1-3324068_20220110183743.jpg");}
+      100%{background-image: url("https://www.bn.gov.ar/web/galeria/Exterior%20Biblioteca/DJI_0018.JPG");}
+      
+  }
+
+  /* *****Header y Menu***** */
+
+
+  header{
+    background-color: whitesmoke;
+    color: black;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;  
+    border-bottom: 0.2px solid rgb(184, 182, 182);
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 100%;
+}
+.menu ul li{
+    text-decoration: none;
+    display: inline-block;
+}
+.menu ul a{
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+    display: block;
+    padding: 1rem 1rem;
+}
+
+.menu ul img{
+    height: 0.5rem;
+    width: auto;
+}
+
+.menu ul a:hover{
+    background-color: rgb(199, 199, 199);
+    transition: background-color 0.3s 0s linear;
+}
+
+
+/* ----- Login ----- */
+
+/* etiqueta li Contenedora */
+#Login{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px; 
+    padding: 10.5px;
+    position: fixed;
+    right: 2rem;
+}
+
+#login{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background-image: url("https://www.svgrepo.com/show/23012/profile-user.svg");
+    background-size:cover;
+}
+
+#login:hover{
+    cursor: pointer;
+    background-color:#1e8ee4;
+
+}
+
+
+/* ----- Logo  ----- */
+
+.Logo{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    width: 30px; 
+    padding: 10.5px;
+}
+
+#logo{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background-image: url("https://www.svgrepo.com/show/276254/gamepad-joystick.svg");
+    background-size:cover;
+
+}
+
+#textoLogo{
+    display: block;
+    color: #F22E2E;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    padding-right: 2rem;
+
+}
+
+/* ----- Buscador  ----- */
+
+/* contenedor */
+.busqueda{
+    display: flex;
+    text-align: center;
+}
+
+/* Box para escribi */
+#Buscador{
+    width: 15rem;
+    height: 1.5rem;
+    margin: 0px 2px 0 0 ;
+}
+
+/* Boton de busqueda */
+#BuscarButton{
+    background-image: url("https://www.svgrepo.com/show/40295/magnifying-glass.svg");
+    background-size: cover;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#BuscarButton:hover{
+    cursor:pointer;
+}
+
+
+/* *****Main Section Article***** */
+
+article h2{
+    margin: 1rem;
+    display:inline;
+}
+.mayorMenor{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+
+.mayorMenor:hover{
+    color: #F22E2E;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.mayorMenor:hover::before{
+    transition: 3s 3s;
+    content:"... ver mas ";
+    font-size: 1.2rem;   
+}
+
+/* contenedor padre */
+section{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 0.5rem;
+    margin-bottom: 4rem;
+}
+
+/* contenedor hijo */
+.tarjet{
+    border-radius: 0.5rem;
+}
+.tarjet:hover{
+    
+    border: 0.5px solid grey;
+    transition: 0.5s 0.3s;
+}
+
+/* contenedor nieto */
+.box{
+    width: 19rem;
+    height: 11rem;
+    background-size: cover;
+    border-bottom: none;
+    text-align: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 2rem;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    border-bottom: none;
+    
+}
+.box:hover{
+    width: 20rem;
+    height: 12rem;
+    transition: 0.5s 0.3s;
+}
+#box1{background-image: url("http://placeimg.com/640/480/animals");}
+#box2{background-image: url("http://placeimg.com/640/480/people");}
+#box3{background-image: url("http://placeimg.com/640/480/arch");}
+#box4{background-image: url("http://placeimg.com/640/480/nature");}
+#box5{background-image: url("http://placeimg.com/640/480/tech");}
+#box6{background-image: url("http://placeimg.com/640/480/people");}
+#box7{background-image: url("http://placeimg.com/640/480/people");}
+#box8{background-image: url("http://placeimg.com/640/480/people");}
+#box9{background-image: url("http://placeimg.com/640/480/people");}
+#box10{background-image: url("http://placeimg.com/640/480/people");}
+#box11{background-image: url("http://placeimg.com/640/480/people");}
+#box12{background-image: url("http://placeimg.com/640/480/people");}
+
+/* contenedor nieto */
+.descripcion{
+    height: 3rem;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.descripcion> a{
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+}
+.descripcion:hover{
+    background-color: rgb(10, 10, 10);
+}
+
+/* *****Banner***** */
+.banner{
+    width: 100%;
+    height: 15rem;
+    background-image: url(./pictures/banner.jpg);
+    background-size: contain;
+}
+
+/* *****Footer***** */
+
+footer{  
+    width: 100%;
+    background-color:black;
+    color: rgb(199, 199, 199);
+    position: relative;
+    bottom: 0px;
+    padding: 10px;  
+}
+.contacto{
+    display: flex;
+}
+
+.EnviarMensaje{
+    width: 20rem;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+#Nombre,#Mail,#Mensaje{
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+#Mensaje{
+    height: 5rem;
+}
+#EnviarBoton{
+    width: 4.5rem;
+    height: 1.5rem;
+}
+
+.hiperVinculos{
+    width: 20rem;
+}
+
+
+
+
+
+
+  
