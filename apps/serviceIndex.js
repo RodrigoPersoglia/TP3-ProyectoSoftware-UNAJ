@@ -9,7 +9,7 @@ window.onload = () => {
 }
 
 const search = () => {
-    var win = window.open(`../views/listado.html?libro=${busqueda.value}`,'_self');
+    var win = window.open(`./Listado.html?libro=${busqueda.value}`,'_self');
     console.log('hola');
         // Cambiar el foco al nuevo tab (punto opcional)
         
