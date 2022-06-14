@@ -16,7 +16,7 @@ export const Titulo = (text) => {
 export const Target = (titulo, autor,isbn,editorial,edision,stock,url) => {
 
     return `<article class="Libro">
-        <a href="http://www.google.com.ar">
+        <a href="libro.html?titulo=${titulo}">
             <div class="PortadaLibro" style="background-image: url(${url});">
             </div>
         </a>
