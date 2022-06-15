@@ -55,10 +55,8 @@ html {
       
   }
 
-    /* *****Header y Menu***** */
-
-
-    header{
+     /* *****Header y Menu***** */
+     header{
         color: black;
         position: fixed;
         width: 100%;
@@ -81,6 +79,8 @@ html {
         text-decoration: none;
         display: block;
         padding: 1rem 1rem;
+        color: rgb(80, 80, 80);
+
     }
     
     .menu ul a:hover{
@@ -113,7 +113,7 @@ html {
         border: none;
     }
     
-    .search button{
+    #searchButton{
         background-color: white;
         border-radius:15px;
         float: right;
@@ -130,72 +130,25 @@ html {
 
 
 
-/* ----- Buscador  ----- */
-
-/* contenedor */
-.busqueda{
-    display: flex;
-    text-align: center;
-}
-
-/* Box para escribi */
-#Buscador{
-    width: 15rem;
-    height: 1.5rem;
-    margin: 0px 2px 0 0 ;
-}
-
-/* Boton de busqueda */
-#BuscarButton{
-    background-image: url("https://www.svgrepo.com/show/40295/magnifying-glass.svg");
-    background-size: cover;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-#BuscarButton:hover{
-    cursor:pointer;
-}
-
-
 
 /* *****Footer***** */
-
 footer{  
     width: 100%;
     background-color:black;
     color: rgb(199, 199, 199);
-    position: relative;
+    position: relative; 
     bottom: 0px;
-    padding: 10px;  
-}
-.contacto{
-    display: flex;
 }
 
-.EnviarMensaje{
-    width: 20rem;
-    border: 1px solid rgb(199, 199, 199);
-    border-radius: 0.5rem;
-    padding: 1rem;
-}
-#Nombre,#Mail,#Mensaje{
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
+footer a{  
 
-#Mensaje{
-    height: 5rem;
+    margin-left: 20px;  
 }
-#EnviarBoton{
-    width: 4.5rem;
-    height: 1.5rem;
-}
+footer a,h2{  
 
-.hiperVinculos{
-    width: 20rem;
+    margin-left: 20px;  
+    margin-top: 10px;
 }
-
 
 
 

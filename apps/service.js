@@ -1,10 +1,12 @@
-import {Info, Titulo,Target} from './components.js'
+import {Info, Titulo,Target,NavMenu,Footer} from './components.js'
 import {GetPeliculas} from './repository.js'
 
 const busqueda = document.getElementById("buscarAutor");
 const busqueda2 = document.getElementById("buscarStock");
 const principal = document.getElementById("Productos");
 const busqueda3 = document.getElementById("buscarText");
+const header = document.getElementById("header");
+const contacto = document.getElementById("Contacto");
 
 
 
@@ -14,6 +16,8 @@ window.onload = () => {
     var libro = getQueryParams().libro
     search2(libro)
     if (libro!=undefined){busqueda3.setAttribute('value',getQueryParams().libro);}
+    header.innerHTML=NavMenu();
+    contacto.innerHTML=Footer();
 }
 
 function getQueryParams() {
@@ -42,6 +46,8 @@ const search = () => {
         principal.innerHTML +=Target(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
         });
   });
+  contacto.innerHTML=null;
+  contacto.innerHTML=Footer();
 }
 
 const search2 = (titulo) => {
@@ -52,8 +58,10 @@ const search2 = (titulo) => {
     .then(data => {
     data.forEach(e => {
         principal.innerHTML +=Target(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
+        principal.innerHTML +=NavMenu()
         });
   });
+
 }
 
 const BusquedaAvanzada = () => {

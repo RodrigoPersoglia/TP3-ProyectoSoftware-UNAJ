@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Nacional 9 de Julio</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <script type="module" src="../apps/serviceIndex.js"></script>
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav class="menu">
             <ul>
                 <li id="Logo">Biblioteca Nacional 9 de Julio</li>
                 <li> <a href="#">Home</a></li>
                 <li><a href="./Listado.html">Libros</a></li>
-                <li><a href="#">Alquileres</a></li>
-                <li><a href="#">Reservas</a></li>
-                <li> <a href="#">Quienes Somos</a></li>
+                <li><a href="./usuario.html?Alquileres">Alquileres</a></li>
+                <li><a href="./usuario.html?Reservas">Reservas</a></li>
+                <li> <a href="./quienes_somos.html">Quienes Somos</a></li>
     
                 <div class="search">
-                    <form action="#">
                         <input type="text"
                             placeholder="  Busqueda"
+                            id = "BuscarInput"
                             name="search">
-                        <button>
+                        <button id="searchButton">
                         </button>
-                    </form>
                 </div>
     
             </ul>
@@ -48,6 +48,6 @@
             <a style="text-decoration: none; color: white;"  target="_blank" href="#"> <img   style="width: auto; height: 20px; background-color: white;" src="https://www.svgrepo.com/show/157818/facebook.svg" alt="" >   Seguinos en Facebook</a> <br><br>
             <a style="text-decoration: none; color: white;"  target="_blank" href="#"> <img   style="width: auto; height: 20px; background-color: white; border-radius: 6.5px;" src="https://www.svgrepo.com/show/303154/instagram-2016-logo.svg" alt="">   Seguinos en Instagram</a> <br><br>
     </footer>
-    <script type="module" src="../apps/serviceIndex.js"></script>
+    
 </body>
 </html>
