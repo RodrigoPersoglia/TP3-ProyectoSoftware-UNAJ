@@ -4,18 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca</title>
-    <script type="module" src="../apps/service3.js"></script>
-    <link rel="stylesheet" href="../styles/main.css">
+    <title>Biblioteca Nacional 9 de Julio</title>
+
+    <link rel="stylesheet" href="../styles/styleGeneral.css">
+    <link rel="stylesheet" href="../styles/styleMenu.css">
+    <link rel="stylesheet" href="../styles/styleFooter.css">
+    <link rel="stylesheet" href="../styles/styleLibro.css">
 </head>
 <body>
     <header id="header">
-     </header>
-     <main>
+    </header>
 
-     </main>
-     <footer id="Contacto">
-        
-     </footer>
+    <main id="main">
+        <article class="Libro">
+            <a href="libro.html?titulo=${titulo}">
+                <div class="PortadaLibro" style="background-image: url(${url});">
+                </div>
+            </a>
+            <div class=" DescripcionLibro">
+                <h2>titulo</h2>
+                <h2>Autor</h2>
+                <P><span>ISBN: </span>7878787878</P>
+                <P><span>EDITORIAL: </span>kapeluz</P>
+                <P><span>EDISION: </span>2022</P>
+                <P><span>STOCK: </span>15</P>
+                <button id="reservar">Reservar</button>
+                <button id="alquilar"> Alquilar</button>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- <footer id="Contacto">
+    </footer> -->
+    
 </body>
+<script type="module" src="../apps/serviceLibro.js"></script>
 </html>

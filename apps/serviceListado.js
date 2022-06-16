@@ -1,5 +1,4 @@
-import {Info, Titulo,Target,NavMenu,Footer} from './components.js'
-import {GetPeliculas} from './repository.js'
+import {Target,NavMenu} from './components.js'
 
 const busqueda = document.getElementById("buscarAutor");
 const busqueda2 = document.getElementById("buscarStock");
@@ -17,7 +16,6 @@ window.onload = () => {
     search2(libro)
     if (libro!=undefined){busqueda3.setAttribute('value',getQueryParams().libro);}
     header.innerHTML=NavMenu();
-    contacto.innerHTML=Footer();
 }
 
 function getQueryParams() {
@@ -46,8 +44,6 @@ const search = () => {
         principal.innerHTML +=Target(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
         });
   });
-  contacto.innerHTML=null;
-  contacto.innerHTML=Footer();
 }
 
 const search2 = (titulo) => {

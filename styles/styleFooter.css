@@ -1,0 +1,16 @@
+footer{  
+    width: 100%;
+    background-color:black;
+    color: rgb(199, 199, 199);
+    position: relative; 
+    bottom: 0px;
+}
+
+footer a{  
+
+    margin-left: 20px;  
+}
+footer a,h2{  
+
+    margin-left: 20px;  
+}

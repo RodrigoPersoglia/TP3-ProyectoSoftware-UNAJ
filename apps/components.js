@@ -1,18 +1,3 @@
-export const Info = (titulo, autor, año) => {
-    return `<div class="pelicula">
-    <label>Titulo:</label>
-    <input type="text" value="${titulo}"/>
-    <label>Autor:</label>
-    <input type="text" value="${autor}"/>
-    <label>Año:</label>
-    <input type="text" value="${año}"/>
-</div>`
-}
-
-export const Titulo = (text) => {
-    return `<h2 class="Titulo">${text}</h2>`
-}
-
 export const Target = (titulo, autor,isbn,editorial,edision,stock,url) => {
 
     return `<article class="Libro">
@@ -37,10 +22,10 @@ export const NavMenu = () => {
     <nav class="menu">
         <ul>
             <li id="Logo">Biblioteca Nacional 9 de Julio</li>
-            <li> <a href="#">Home</a></li>
-            <li><a href="./Listado.html">Libros</a></li>
-            <li><a href="./usuario.html?Alquileres">Alquileres</a></li>
-            <li><a href="./usuario.html?Reservas">Reservas</a></li>
+            <li> <a href="./home.html">Home</a></li>
+            <li><a href="./listado.html">Libros</a></li>
+            <li><a href="./alquileres.html">Alquileres</a></li>
+            <li><a href="./reservas.html">Reservas</a></li>
             <li> <a href="./quienes_somos.html">Quienes Somos</a></li>
 
             <div class="search">
