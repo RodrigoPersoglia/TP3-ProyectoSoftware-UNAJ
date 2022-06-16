@@ -52,3 +52,8 @@ export const Footer = () => {
         <a style="text-decoration: none; color: white;"  target="_blank" href="#"> <img   style="width: auto; height: 20px; background-color: white; border-radius: 6.5px;" src="https://www.svgrepo.com/show/303154/instagram-2016-logo.svg" alt="">   Seguinos en Instagram</a> <br><br>
     </footer>`
 }
+
+
+export const redireccion = () => {
+    var win = window.open(`./listado.html?libro=${document.getElementById("BuscarInput").value}`,'_self');
+}

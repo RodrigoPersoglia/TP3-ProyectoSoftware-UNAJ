@@ -1,21 +1,31 @@
-import {NavMenu,Footer} from './components.js'
+import {NavMenu,Footer,redireccion} from './components.js'
 
 const header = document.getElementById("header");
 const contacto = document.getElementById("Contacto");
 const busqueda = document.getElementById("BuscarInput");
+const reservarButton = document.getElementById("reservar");
+const alquilarButton = document.getElementById("alquilar");
 
 
 
 
 window.onload = () => {
     header.innerHTML=NavMenu();
-    contacto.innerHTML=Footer();
-    document.getElementById("searchButton").onclick = search;
-}
-
-const search = () => {
-    console.log("entro a la funcion");
-    var win = window.open(`./Listado.html?libro=${busqueda.value}`,'_self');
+    // document.getElementById("searchButton").onclick = search;
+    reservarButton.onclick = reservar;
+    alquilarButton.onclick = alquilar;
+    document.getElementById("searchButton").onclick = redireccionar;
 }
 
 
+
+const reservar = () => {
+    window.alert("Reservado");
+}
+
+const alquilar = () => {
+    window.alert("Alquilado");
+}
+const redireccionar = () => {
+    redireccion();
+}

@@ -1,4 +1,4 @@
-import {Target,NavMenu} from './components.js'
+import {Target,NavMenu,redireccion} from './components.js'
 
 const busqueda = document.getElementById("buscarAutor");
 const busqueda2 = document.getElementById("buscarStock");
@@ -16,6 +16,7 @@ window.onload = () => {
     search2(libro)
     if (libro!=undefined){busqueda3.setAttribute('value',getQueryParams().libro);}
     header.innerHTML=NavMenu();
+    document.getElementById("searchButton").onclick = redireccionar;
 }
 
 function getQueryParams() {
@@ -72,7 +73,9 @@ const BusquedaAvanzada = () => {
         busqueda2.style.display = "none";
         document.getElementById("busquedaAvanzada").innerHTML="Busqueda avanzada &#8595";
 
-    }
+    }   
+}
 
-    
+const redireccionar = () => {
+    redireccion();
 }
