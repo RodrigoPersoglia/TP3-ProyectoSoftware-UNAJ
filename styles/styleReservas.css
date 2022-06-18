@@ -1,11 +1,17 @@
 
 
-  main{
+
+main{
     margin-top: 4rem;
     height: calc(100vh);
 }
-main h2{
+
+#titulo{
     margin-bottom: 1rem;
+}
+.main h2{
+    margin-bottom: 5px;
+    font-size: 22px;
 }
 #buscarReservas{
     background-color:rgb(199, 199, 199);
@@ -22,7 +28,7 @@ main h2{
     height: 2rem;
     border: 1px solid gray;
     border-radius: 5px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     display:none;
 }
 
@@ -43,19 +49,16 @@ main h2{
     flex-direction: row;
     gap: 2rem;
     color: whitesmoke;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-top: 1rem;
 }
 .PortadaLibro{
     background-size: cover;
-    width: 20vw;
-    height: 60vh;
+    width: 163.5px;
+    height: 218px;
     border-radius: 5%;
 }
-.DescripcionLibro{
-    width: 80vw;
-    height: 60vh;   
-}
+
 .DescripcionLibro h2{
     margin-left: 0%;
     }
@@ -65,7 +68,7 @@ color: #8AB4F8;
 }
 .DescripcionLibro p{
     color: gray;
-    margin-top: 1.5rem;
+    margin-top: 10px;
 }
 .DescripcionLibro button{
 margin-top: 1rem;

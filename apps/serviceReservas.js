@@ -23,7 +23,7 @@ const search = () => {
     .then(response => response.json())
     .then(data => {
     data.forEach(e => {
-        principal.innerHTML+=Target2(e.libro.titulo, e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,e.fechaReserva)
+        principal.innerHTML+=Target2(e.libro.titulo, e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString())
         });
         botones = null;
         botones = document.querySelectorAll(".botones");
@@ -44,7 +44,7 @@ const redireccionar = () => {
 
 const cuandoSeHaceClick = function (evento) {
     let Data ={
-            clienteDNI: "34813823",
+            clienteDNI: dni.value,
             isbn: this.id
           }
 fetch(`https://localhost:7032/api/alquiler`,{

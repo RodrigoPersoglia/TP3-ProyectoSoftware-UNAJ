@@ -1,6 +1,101 @@
 
 
 
+  main{
+    margin-top: 4rem;
+    height: calc(100vh);
+}
+#titulo{
+    margin-bottom: 1rem;
+}
+.main h2{
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+#buscarReservas{
+    background-color:rgb(199, 199, 199);
+    width: 120px;
+    height: 2rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: #202124;
+}
+.buscadores{
+    background-color:whitesmoke;
+    color: #202124;
+    width: 20vw;
+    height: 2rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display:none;
+}
+
+#dni{
+    background-color:whitesmoke;
+    color: #202124;
+    width: 20vw;
+    height: 2rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+.Libro{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    color: whitesmoke;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+.PortadaLibro{
+    background-size: cover;
+    width: 150px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.DescripcionLibro h2{
+    margin-left: 0%;
+    }
+.DescripcionLibro span{
+color: #8AB4F8;
+
+}
+.DescripcionLibro p{
+    color: gray;
+    margin-top: 10px;
+}
+.DescripcionLibro button{
+margin-top: 1rem;
+width: 80px;
+height: 30px;
+}
+
+#busquedaAvanzada:hover{
+    text-decoration: underline;
+    cursor:pointer;
+
+}
+#busquedaAvanzada{
+display: inline-block;
+height: 20px;
+padding: 0;
+margin-top: 0px;
+margin-bottom: 8px;
+
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+    
+
+
 
 
   

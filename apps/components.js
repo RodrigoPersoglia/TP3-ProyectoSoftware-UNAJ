@@ -27,12 +27,26 @@ export const Target2 = (titulo, autor,isbn,editorial,edision,url,reserva) => {
     <P><span>EDITORIAL: </span>${editorial}</P>
     <P><span>EDISION: </span>${edision}</P>
     <P><span>FECHA DE RESERVA: </span>${reserva}</P>
-    <button type="button" class="botones" id="${isbn}">Reservar</button>
+    <button type="button" class="botones" id="${isbn}">Alquilar</button>
     </div>
     </article>`
 }
 
-
+export const Card3 = (titulo, autor,isbn,editorial,edision,url,alquiler,devolucion) => {
+    return `<article class="Libro">
+    <div class="PortadaLibro" style="background-image: url(${url});">
+    </div>
+    <div class=" DescripcionLibro">
+    <h2>${titulo}</h2>
+    <h2>${autor}</h2>
+    <P><span>ISBN: </span>N° ${isbn}</P>
+    <P><span>EDITORIAL: </span>${editorial}</P>
+    <P><span>EDISION: </span>${edision}</P>
+    <P><span>FECHA DE ALQUILER: </span>${alquiler}</P>
+    <P><span>FECHA DE DEVOLUCION: </span>${devolucion}</P>
+    </div>
+    </article>`
+}
 
 
 
