@@ -10,29 +10,22 @@
     <link rel="stylesheet" href="../styles/styleMenu.css">
     <link rel="stylesheet" href="../styles/styleFooter.css">
     <link rel="stylesheet" href="../styles/styleLibro.css">
+    <link rel="icon" href="https://www.svgrepo.com/show/41197/book.svg">
 </head>
 <body>
     <header id="header">
     </header>
 
-    <main id="main">
-        <article class="Libro">
-            <a href="libro.html?titulo=${titulo}">
-                <div class="PortadaLibro" style="background-image: url(https://elcanonliterario.files.wordpress.com/2009/04/aleph.jpg);">
-                </div>
-            </a>
-            <div class=" DescripcionLibro">
-                <h2>titulo</h2>
-                <h2>Autor</h2>
-                <P><span>ISBN: </span>7878787878</P>
-                <P><span>EDITORIAL: </span>kapeluz</P>
-                <P><span>EDISION: </span>2022</P>
-                <P><span>STOCK: </span>15</P>
-                <button id="reservar">Reservar</button>
-                <button id="alquilar"> Alquilar</button>
-            </div>
+    <main>
+        <section id="main" class="Libro">
+        </section>
 
-        </article>
+        <form class="formulario">
+            <label for="dni">Ingrese su dni</label>
+            <input type="number" name="dni" id="dni" placeholder="Escriba su DNI" value="34813823">
+            <button type="button" id="reservar">Reservar</button>
+            <button type="button" id="alquilar"> Alquilar</button>
+    </form>
 
     </main>
 

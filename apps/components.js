@@ -1,12 +1,12 @@
 export const Target = (titulo, autor,isbn,editorial,edision,stock,url) => {
 
     return `<article class="Libro">
-        <a href="libro.html?titulo=${titulo}">
+        <a href="libro.html?titulo=${titulo}&isbn=${isbn}"${titulo}">
             <div class="PortadaLibro" style="background-image: url(${url});">
             </div>
         </a>
         <div class=" DescripcionLibro">
-            <h2>${titulo}</h2>
+            <h2><a href="libro.html?titulo=${titulo}&isbn=${isbn}">${titulo}</a></h2>
             <h2>${autor}</h2>
             <P><span>ISBN: </span>N° ${isbn}</P>
             <P><span>EDITORIAL: </span>${editorial}</P>
@@ -15,6 +15,26 @@ export const Target = (titulo, autor,isbn,editorial,edision,stock,url) => {
         </div>
     </article>`
 }
+
+export const Target2 = (titulo, autor,isbn,editorial,edision,url,reserva) => {
+    return `<article class="Libro">
+    <div class="PortadaLibro" style="background-image: url(${url});">
+    </div>
+    <div class=" DescripcionLibro">
+    <h2>${titulo}</h2>
+    <h2>${autor}</h2>
+    <P><span>ISBN: </span>N° ${isbn}</P>
+    <P><span>EDITORIAL: </span>${editorial}</P>
+    <P><span>EDISION: </span>${edision}</P>
+    <P><span>FECHA DE RESERVA: </span>${reserva}</P>
+    <button type="button" class="botones" id="${isbn}">Reservar</button>
+    </div>
+    </article>`
+}
+
+
+
+
 
 export const NavMenu = () => {
 
@@ -30,7 +50,7 @@ export const NavMenu = () => {
 
             <div class="search">
                     <input type="text"
-                        placeholder="  Busqueda"
+                        placeholder="  Titulo del libro"
                         id = "BuscarInput"
                         name="search">
                     <button id="searchButton">
@@ -57,3 +77,13 @@ export const Footer = () => {
 export const redireccion = () => {
     var win = window.open(`./listado.html?libro=${document.getElementById("BuscarInput").value}`,'_self');
 }
+
+export const redireccionReservas = (dni) => {
+    var win = window.open(`./reservas.html?dni=${dni}`,'_self');
+}
+
+export const redireccionAlquileres = (dni) => {
+    var win = window.open(`./alquileres.html?dni=${dni}`,'_self');
+}
+
+

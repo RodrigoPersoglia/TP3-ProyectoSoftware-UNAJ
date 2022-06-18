@@ -1,7 +1,6 @@
 import {Target,NavMenu,redireccion} from './components.js'
 
 const busqueda = document.getElementById("buscarAutor");
-const busqueda2 = document.getElementById("buscarStock");
 const principal = document.getElementById("Productos");
 const busqueda3 = document.getElementById("buscarText");
 const header = document.getElementById("header");
@@ -37,7 +36,7 @@ function getQueryParams() {
 
 const search = () => {
     principal.innerHTML =null;
-    var url = `https://localhost:7032/api/libros?nombre=${busqueda.value}&titulo=${busqueda3.value}`;
+    var url = `https://localhost:7032/api/libros?stock=true&nombre=${busqueda.value}&titulo=${busqueda3.value}`;
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -49,7 +48,7 @@ const search = () => {
 
 const search2 = (titulo) => {
     principal.innerHTML =null;
-    var url = `https://localhost:7032/api/libros?titulo=${titulo}`;
+    var url = `https://localhost:7032/api/libros?stock=true&titulo=${titulo}`;
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -61,21 +60,24 @@ const search2 = (titulo) => {
 
 }
 
+
+
+const redireccionar = () => {
+    redireccion();
+}
+
+
 const BusquedaAvanzada = () => {
     if(busqueda.style.display !== "inline-block"){
+        busqueda.value=null;
         busqueda.style.display = "inline-block";
-        busqueda2.style.display = "inline-block";
         document.getElementById("busquedaAvanzada").innerHTML="Busqueda simple &#8593";
     }
 
     else{
+        busqueda.value=null;
         busqueda.style.display = "none";
-        busqueda2.style.display = "none";
         document.getElementById("busquedaAvanzada").innerHTML="Busqueda avanzada &#8595";
 
     }   
-}
-
-const redireccionar = () => {
-    redireccion();
 }
