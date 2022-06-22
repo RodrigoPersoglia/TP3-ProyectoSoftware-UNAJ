@@ -55,7 +55,7 @@ export const NavMenu = () => {
     return `    <header id="header">
     <nav class="menu">
         <ul>
-            <li id="Logo">Biblioteca Nacional 9 de Julio</li>
+            <li id="Logo">Biblioteca Municipal 9 de Julio</li>
             <li> <a href="./home.html">Home</a></li>
             <li><a href="./listado.html">Libros</a></li>
             <li><a href="./alquileres.html">Alquileres</a></li>
