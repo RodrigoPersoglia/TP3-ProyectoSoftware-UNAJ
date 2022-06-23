@@ -19,19 +19,26 @@ window.onload = () => {
 
 const search = () => {
     principal.innerHTML =null;
-    var url = `https://localhost:7032/api/alquiler/cliente/${dni.value}?estado=1`;
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(e => {
-          principal.innerHTML+=Card2(e.libro.titulo, e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString())
+    if(dni.value!=""){
+        let count = 0;
+        var url = `https://localhost:7032/api/alquiler/cliente/${dni.value}?estado=1`;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(e => {
+            count++;
+              principal.innerHTML+=Card2(e.libro.titulo, e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString())
+              });
+              botones = null;
+              botones = document.querySelectorAll(".botones");
+              botones.forEach(boton => {
+                  boton.addEventListener("click", cuandoSeHaceClick);
+              });
+              if(count===0){alert('No hay reservas del cliente ingresado')}
           });
-          botones = null;
-          botones = document.querySelectorAll(".botones");
-          botones.forEach(boton => {
-              boton.addEventListener("click", cuandoSeHaceClick);
-          });
-      });
+    }
+    else{alert("No ingreso ningun dni")}
+
 }
 
 
