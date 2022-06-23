@@ -1,4 +1,5 @@
-import {NavMenu,Footer,redireccion} from './components.js'
+import {NavMenu,Footer} from './components.js'
+import {redireccion} from './redirecciones.js'
 
 const header = document.getElementById("header");
 const contacto = document.getElementById("Contacto");

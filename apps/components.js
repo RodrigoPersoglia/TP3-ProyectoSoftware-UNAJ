@@ -1,5 +1,4 @@
-export const Target = (titulo, autor,isbn,editorial,edision,stock,url) => {
-
+export const Card = (titulo, autor,isbn,editorial,edision,stock,url) => {
     return `<article class="Libro">
         <a href="libro.html?titulo=${titulo}&isbn=${isbn}"${titulo}">
             <div class="PortadaLibro" style="background-image: url(${url});">
@@ -16,7 +15,7 @@ export const Target = (titulo, autor,isbn,editorial,edision,stock,url) => {
     </article>`
 }
 
-export const Target2 = (titulo, autor,isbn,editorial,edision,url,reserva) => {
+export const Card2 = (titulo, autor,isbn,editorial,edision,url,reserva) => {
     return `<article class="Libro">
     <div class="PortadaLibro" style="background-image: url(${url});">
     </div>
@@ -48,15 +47,12 @@ export const Card3 = (titulo, autor,isbn,editorial,edision,url,alquiler,devoluci
     </article>`
 }
 
-
-
 export const NavMenu = () => {
-
     return `    <header id="header">
     <nav class="menu">
         <ul>
             <li id="Logo">Biblioteca Municipal 9 de Julio</li>
-            <li> <a href="./home.html">Home</a></li>
+            <li> <a href="./index.html">Home</a></li>
             <li><a href="./listado.html">Libros</a></li>
             <li><a href="./alquileres.html">Alquileres</a></li>
             <li><a href="./reservas.html">Reservas</a></li>
@@ -77,7 +73,6 @@ export const NavMenu = () => {
 }
 
 export const Footer = () => {
-
     return `<footer id="Contacto">
         <h2>Contacto</h2><br>
         <a style="text-decoration: none; color: white;"   target="_blank" href="mailto:rodrigo.persoglia@gmail.com?Subject=Mensaje desde el sitio Web"> <img   style="width: auto; height: 20px;" src="https://www.svgrepo.com/show/353812/google-gmail.svg" alt="" margin-left="1rem">   Comunicate por e-mail</a> <br><br>
@@ -87,17 +82,5 @@ export const Footer = () => {
     </footer>`
 }
 
-
-export const redireccion = () => {
-    var win = window.open(`./listado.html?libro=${document.getElementById("BuscarInput").value}`,'_self');
-}
-
-export const redireccionReservas = (dni) => {
-    var win = window.open(`./reservas.html?dni=${dni}`,'_self');
-}
-
-export const redireccionAlquileres = (dni) => {
-    var win = window.open(`./alquileres.html?dni=${dni}`,'_self');
-}
 
 

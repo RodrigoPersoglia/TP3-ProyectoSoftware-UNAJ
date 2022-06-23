@@ -1,19 +1,19 @@
-import {NavMenu,Footer,redireccion,Target,redireccionReservas,redireccionAlquileres} from './components.js'
+import {NavMenu,Footer,Card} from './components.js'
+import {redireccion} from './redirecciones.js'
 
 const header = document.getElementById("header");
+const principal = document.getElementById("main");
 const contacto = document.getElementById("Contacto");
 const busqueda = document.getElementById("BuscarInput");
 const reservarButton = document.getElementById("reservar");
 const alquilarButton = document.getElementById("alquilar");
-const principal = document.getElementById("main");
 const dniInput = document.getElementById("dni");
 let libro;
 let isbn;
 
-
-
 window.onload = () => {
     header.innerHTML=NavMenu();
+    contacto.innerHTML=Footer();
     reservarButton.onclick = reservar;
     alquilarButton.onclick = alquilar;
     libro = getQueryParams().titulo
@@ -30,17 +30,16 @@ const reservar = ()=> {
         "fechaAlquiler": null,
         "fechaReserva": new Date().toISOString()
     }
-fetch(`https://localhost:7032/api/alquiler`,{
-    method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(Data)
-})
-.then(response => response.json())
-.then(data => {window.alert(data.mensaje);search(libro);}).catch(error => console.log(error))
-
+    fetch(`https://localhost:7032/api/alquiler`,{
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(Data)
+    })
+    .then(response => response.json())
+    .then(data => {window.alert(data.mensaje);search(libro);}).catch(error => console.log(error))
 }
 
 
@@ -53,16 +52,16 @@ const alquilar = ()=> {
         "fechaAlquiler": new Date().toISOString(),
         "fechaReserva": null
     }
-fetch(`https://localhost:7032/api/alquiler`,{
-    method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(Data)
-})
-.then(response => response.json())
-.then(data => {window.alert(data.mensaje);search(libro);}).catch(error => console.log(error))
+    fetch(`https://localhost:7032/api/alquiler`,{
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(Data)
+    })
+    .then(response => response.json())
+    .then(data => {window.alert(data.mensaje);search(libro);}).catch(error => console.log(error))
 }
 
 
@@ -93,8 +92,7 @@ const search = (titulo) => {
     .then(response => response.json())
     .then(data => {
     data.forEach(e => {
-        principal.innerHTML +=Target(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
+        principal.innerHTML +=Card(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
         });
-  });
-
+    });
 }

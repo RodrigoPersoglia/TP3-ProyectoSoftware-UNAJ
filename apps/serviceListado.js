@@ -1,10 +1,12 @@
-import {Target,NavMenu,redireccion} from './components.js'
+import {Card,NavMenu,Footer} from './components.js'
+import {redireccion} from './redirecciones.js'
 
-const busqueda = document.getElementById("buscarAutor");
-const principal = document.getElementById("Productos");
-const busqueda3 = document.getElementById("buscarText");
 const header = document.getElementById("header");
+const principal = document.getElementById("Productos");
 const contacto = document.getElementById("Contacto");
+const busqueda = document.getElementById("buscarAutor");
+const busqueda3 = document.getElementById("buscarText");
+
 
 
 
@@ -15,6 +17,7 @@ window.onload = () => {
     search2(libro)
     if (libro!=undefined){busqueda3.setAttribute('value',getQueryParams().libro);}
     header.innerHTML=NavMenu();
+    contacto.innerHTML=Footer();
     document.getElementById("searchButton").onclick = redireccionar;
 }
 
@@ -41,9 +44,9 @@ const search = () => {
     .then(response => response.json())
     .then(data => {
     data.forEach(e => {
-        principal.innerHTML +=Target(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
+        principal.innerHTML +=Card(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
         });
-  });
+    });
 }
 
 const search2 = (titulo) => {
@@ -53,13 +56,11 @@ const search2 = (titulo) => {
     .then(response => response.json())
     .then(data => {
     data.forEach(e => {
-        principal.innerHTML +=Target(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
-        principal.innerHTML +=NavMenu()
+        principal.innerHTML +=Card(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
         });
-  });
+    });
 
 }
-
 
 
 const redireccionar = () => {
@@ -73,7 +74,6 @@ const BusquedaAvanzada = () => {
         busqueda.style.display = "inline-block";
         document.getElementById("busquedaAvanzada").innerHTML="Busqueda simple &#8593";
     }
-
     else{
         busqueda.value=null;
         busqueda.style.display = "none";
