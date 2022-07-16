@@ -1,25 +1,9 @@
 
-
-
-  main{
-    margin-top: 4rem;
-    min-height: 100vh;
-}
 #titulo{
     margin-bottom: 1rem;
 }
-.main h2{
-    margin-bottom: 5px;
-    font-size: 22px;
-}
-#buscarReservas{
-    background-color:rgb(199, 199, 199);
-    width: 120px;
-    height: 2rem;
-    border: 1px solid gray;
-    border-radius: 5px;
-    color: #202124;
-}
+
+
 .buscadores{
     background-color:whitesmoke;
     color: #202124;
@@ -42,60 +26,112 @@
 }
 
 
-.Libro{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    color: whitesmoke;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-}
-.PortadaLibro{
-    background-size: cover;
-    width: 150px;
-    height: 200px;
-    border-radius: 5%;
-}
-
-.DescripcionLibro h2{
-    margin-left: 0%;
-    }
-.DescripcionLibro span{
-color: #8AB4F8;
-
-}
-.DescripcionLibro p{
-    color: gray;
-    margin-top: 10px;
-}
-.DescripcionLibro button{
-margin-top: 1rem;
-width: 80px;
-height: 30px;
-}
-
-#busquedaAvanzada:hover{
-    text-decoration: underline;
-    cursor:pointer;
-
-}
-#busquedaAvanzada{
-display: inline-block;
-height: 20px;
-padding: 0;
-margin-top: 0px;
-margin-bottom: 8px;
-
-}
-
 a{
     text-decoration: none;
     color: whitesmoke;
 }
+
+#main{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+
+.Libro{
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    width: 31vw;
+    height: 28vw;
+    background-color:#2c2c2c;
+    border-radius: 10px;    
+}
+
+
+.Titulo{
+    width: 31vw;
+    height: 2vw;
+    text-align: center;
+    margin-top: 0.5vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+.LibroDetalle{
+    display: flex;
+    width: 31vw;
+    height: 25vw;
+    justify-content: space-evenly;
+}
+.PortadaLibro{
+    background-size: cover;
+    width: 18vw;
+    height: 22w;
+    border-radius: 5%;
+    margin: 0.5rem;
+
+}
+.DescripcionLibro{
+    width: 14vw;
+    /* height: 20.5vw; */
+    margin: 0.5rem;
+}
+
+
+
+.DescripcionLibro span{
+    color: #8AB4F8;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+.DescripcionLibro p{
+    color: gray;
+    padding: 0;
+    margin: 0;  
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.DescripcionLibro h3{
+    color: gray;
+    padding-bottom: 0.5rem;   
+}
+.DescripcionLibro button{
+width: 80px;
+height: 30px;
+text-align: center;
+}
+
     
 
+#buscarReservas{
+    background-color:rgb(199, 199, 199);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-image: url("https://www.svgrepo.com/show/418976/detective-loupe-magnifying-glass.svg");
+    background-repeat: no-repeat;
+    background-size:80%;
+    background-position: center;
+}
 
+#buscarReservas:hover{
+    background-color:rgb(173, 173, 173);
+}
+
+.buscador{
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    justify-content: center;
+}
 
 
   

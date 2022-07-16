@@ -1,16 +1,49 @@
 footer{  
     width: 100%;
-    background-color:black;
-    color: rgb(199, 199, 199);
+    background-color:#1f1f1f;
+    color: whitesmoke;
     position: relative; 
     bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-bottom: 0rem;
+
 }
 
-footer a{  
-
-    margin-left: 20px;  
+footer h2{ 
+    margin-bottom: 1rem;
 }
-footer a,h2{  
 
-    margin-left: 20px;  
+footer a{ 
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: whitesmoke;
+}
+footer a:hover{ 
+    color: #8AB4F8;
+    
+}
+
+
+#Redes{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+#Informacion,#Coleccion,#comunicacion{
+    display: flex;
+    flex-direction: column;
+}
+
+.varios{
+    display: flex;
+    justify-content:space-around;
+}
+
+#Autor{
+    text-align: center;
+    margin-bottom: 0.5rem;
 }

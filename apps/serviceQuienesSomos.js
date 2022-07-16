@@ -9,6 +9,7 @@ window.onload = () => {
     header.innerHTML=NavMenu();
     contacto.innerHTML=Footer();
     document.getElementById("searchButton").onclick = redireccionar;
+    document.getElementById("item5").style.borderBottom="2px solid #007bff"
 }
 
 const redireccionar = () => {

@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'EduSABeginner';
+  src: url('../fuentes/EduSABeginner-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url('../fuentes/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
 html {
     font-size: 16px;
     box-sizing: border-box;
@@ -15,9 +29,27 @@ html {
   body{
     background-color:#262626;
     color: whitesmoke;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Open-Sans";
+  
 }
+
+h2{
+  font-size: 24px;
+}
+h3{
+  font-size: 18.72px;
+}
+
 main{
-  margin-top: 5rem;
-  margin-left: 2rem;
+  margin-top: 4rem;
+  min-height: calc(100vh - 4rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
 }
+
+
+input{
+  padding-left: 1rem;
+}
+

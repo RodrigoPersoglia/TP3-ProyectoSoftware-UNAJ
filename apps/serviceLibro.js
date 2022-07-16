@@ -1,4 +1,4 @@
-import {NavMenu,Footer,Card} from './components.js'
+import {NavMenu,Footer,Card5,Card6,botonRedireccion} from './components.js'
 import {redireccion} from './redirecciones.js'
 
 const header = document.getElementById("header");
@@ -8,6 +8,9 @@ const busqueda = document.getElementById("BuscarInput");
 const reservarButton = document.getElementById("reservar");
 const alquilarButton = document.getElementById("alquilar");
 const dniInput = document.getElementById("dni");
+const Relacionados = document.getElementById("relacionados");
+const ModalCustom = document.getElementById("mensaje");
+const Modalfooter = document.getElementById("modal-footer");
 let libro;
 let isbn;
 
@@ -38,8 +41,10 @@ const reservar = ()=> {
         },
         body: JSON.stringify(Data)
     })
-    .then(response => response.json())
-    .then(data => {window.alert(data.mensaje);search(libro);}).catch(error => console.log(error))
+    .then(response => {
+        if(response.ok){Modal('Reserva confirmada','reservas',dniInput.value);}
+        else{response.json().then(data => {Modal(data.mensaje,'reservas','')}).catch(error => console.log(error))}
+    })    
 }
 
 
@@ -60,11 +65,17 @@ const alquilar = ()=> {
         },
         body: JSON.stringify(Data)
     })
-    .then(response => response.json())
-    .then(data => {window.alert(data.mensaje);search(libro);}).catch(error => console.log(error))
+    .then(response => {
+        if(response.ok){ Modal('Alquiler confirmado','alquileres',dniInput.value); }
+        else{response.json().then(data => {Modal(data.mensaje,'alquileres','')}).catch(error => console.log(error))}
+    })    
 }
 
-
+const Modal = (texto,redireccion,dni) => {
+    ModalCustom.innerHTML=null;
+    ModalCustom.innerHTML=texto;
+    Modalfooter.innerHTML+=botonRedireccion(redireccion,dni);
+}
 
 const redireccionar = () => {
     redireccion();
@@ -92,7 +103,21 @@ const search = (titulo) => {
     .then(response => response.json())
     .then(data => {
     data.forEach(e => {
-        principal.innerHTML +=Card(e.titulo, e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen)
+        principal.innerHTML +=Card5(e.titulo.toUpperCase(), e.autor,e.isbn,e.editorial,e.edicion,e.stock,e.imagen);
+        search2(e.autor);
+        });
+    });
+}
+
+const search2 = (autor) => {
+    Relacionados.innerHTML=null;
+    var url = `https://localhost:7032/api/libros?nombre=${autor}`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+    data.forEach(e => {
+        if(e.isbn!=isbn){Relacionados.innerHTML +=Card6(e.titulo,e.isbn,e.imagen)}
+        
         });
     });
 }

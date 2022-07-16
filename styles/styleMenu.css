@@ -5,35 +5,37 @@
         width: 100%;
         top:0;
         left: 0;  
-        color: rgb(80, 80, 80);
-        background-color: whitesmoke;
+        color: whitesmoke;
+        background-color:#393939;
+        font-size: 14px;
     }
     
-    .menu{
+    .MiMenu{
         display: flex;
         justify-content: start;
+        height: 4rem;
     }
 
-    .menu ul li{
+    .MiMenu ul li{
         text-decoration: none;
         display: inline-block;
     }
-    .menu ul a{
+    .MiMenu ul a{
         text-decoration: none;
         display: block;
-        padding: 1rem 1rem;
-        color: rgb(80, 80, 80);
+        padding: 1.3rem 1rem;
+        color: whitesmoke;
 
     }
     
-    .menu ul a:hover{
-        background-color: rgb(199, 199, 199);
+    .MiMenu ul a:hover{
+        color: #8AB4F8;
         transition: background-color 0.3s 0s linear;
     }
 
     .search{
         float:right;
-        margin-top:12px;
+        margin-top:17px;
         background-color: white;
         border-radius:15px;
         border: 0.5px solid grey;
@@ -44,7 +46,7 @@
         float:left;
         padding-left: 30px;
         padding-right: 60px;
-        margin-top:15px;
+        margin-top:20px;
     }
 
     .search input[type=text]
@@ -70,3 +72,8 @@
         padding-right: 25px;
         margin-right: 5px;
     } 
+
+    #BuscarInput{
+        padding-left: 1rem;
+    }
+

@@ -2,25 +2,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 3rem;
+      margin: 1rem;
+      margin-top:76px;
+      height: calc(100vh - 92px);
+      margin-bottom: 3rem;
+      
   }
   .imagen h2{
-      font-size: 4rem;
-      position: absolute;
+      font-size: 3rem;
+      text-align: right;
       bottom: 0; 
-      right: 0 ;
       text-shadow: 0px 1px 1px rgb(0 0 0 / 50%);
       color: whitesmoke; 
       padding-right: 2rem;
   }
 
   .imagen{
-      width: 100%;
-      height: calc((100vmin - 3rem));
+      width: 90%;
+      height: calc(90vmin - 76px);
       background-color: transparent;
       background-image: url("https://www.bn.gov.ar/web/galeria/Exterior%20Biblioteca/DJI_0018.JPG");
       background-size:cover;
       animation: slider 15s linear 3s infinite none;
+      border-radius: 20px;
+      
   }
 
   @keyframes slider {
@@ -33,10 +38,60 @@
       
   }
 
-  main{
-    margin-top: 3rem;
-    margin-left: 0rem;
+
+  #Libros{
+    padding: 1vw;
+    display: flex;
+    gap: 1vw;
+    margin-bottom: 4rem;
   }
+
+  .PortadaLibro{
+    width: 9vw;
+    height: 14vw;
+    background-size: cover;
+  }
+
+.PortadaLibro:hover{
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid whitesmoke;
+}
+
+#Autores-Conteiner{
+    display: flex;
+    padding: 1vw;
+    gap: 1vw;
+    justify-content: space-between;
+}
+
+.Autores{
+    width: 13vw;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.AutorFoto:hover{
+cursor: pointer;
+border: 1px solid whitesmoke;
+}
+
+.AutorFoto{
+    width:13vw;
+    height: 13vw;
+    background-size:cover;
+    border-radius: 50%;
+}
+.AutorDescription h3{
+    width:19vw;
+    align-self: center;
+}
+
+.subtitulos{
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
 
     
 
