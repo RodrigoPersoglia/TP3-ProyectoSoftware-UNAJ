@@ -1,4 +1,4 @@
-import {Card,NavMenu,Footer} from './components.js'
+import {Card,NavMenu,Footer,urlApi} from './components.js'
 import {redireccion} from './redirecciones.js'
 
 const header = document.getElementById("header");
@@ -42,7 +42,7 @@ function getQueryParams() {
 
 const search = () => {
     principal.innerHTML =null;
-    var url = `https://localhost:7032/api/libros?stock=true&nombre=${busqueda.value}&titulo=${busqueda3.value}`;
+    var url = `${urlApi}libros?stock=true&nombre=${busqueda.value}&titulo=${busqueda3.value}`;
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -55,7 +55,7 @@ const search = () => {
 
 const search2 = (titulo) => {
     principal.innerHTML =null;
-    var url = `https://localhost:7032/api/libros?stock=true&nombre=${autor}&titulo=${titulo}`;
+    var url = `${urlApi}libros?stock=true&nombre=${autor}&titulo=${titulo}`;
     fetch(url)
     .then(response => response.json())
     .then(data => {

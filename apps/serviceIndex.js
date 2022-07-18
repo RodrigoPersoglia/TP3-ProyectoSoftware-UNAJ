@@ -1,5 +1,7 @@
-import {NavMenu,Footer,Card4} from './components.js'
-import {redireccion} from './redirecciones.js'
+import {NavMenu,Footer,Card4,urlApi} from './components.js';
+
+
+
 
 const header = document.getElementById("header");
 const contacto = document.getElementById("Contacto");
@@ -10,7 +12,7 @@ window.onload = () => {
     contacto.innerHTML=Footer();
     document.getElementById("searchButton").onclick = redireccionar;
     search();
-    document.getElementById("item1").style.borderBottom="2px solid #007bff"
+    document.getElementById("item1").style.borderBottom="2px solid #007bff";
 }
 
 const redireccionar = () => {
@@ -20,7 +22,7 @@ const redireccionar = () => {
 
 const search = () => {
     libros.innerHTML =null;
-    var url = `https://localhost:7032/api/libros?`;
+    var url = `${urlApi}libros?`;
     fetch(url)
     .then(response => response.json())
     .then(data => {

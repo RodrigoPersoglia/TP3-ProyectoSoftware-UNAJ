@@ -189,3 +189,4 @@ export const botonRedireccion = (redireccion,dni) => {
 
 
 
+export const urlApi= 'https://localhost:7032/api/';;

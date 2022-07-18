@@ -1,4 +1,4 @@
-import {NavMenu,Footer,Card2,botonRedireccion,bienvenida} from './components.js'
+import {NavMenu,Footer,Card2,botonRedireccion,bienvenida,urlApi} from './components.js'
 import {redireccion} from './redirecciones.js'
 
 
@@ -28,7 +28,7 @@ const search = () => {
   principal.innerHTML =null;
   if(dni.value!=""){
       let count = 0;
-      var url = `https://localhost:7032/api/alquiler/cliente/${dni.value}?estado=1`;
+      var url = `${urlApi}alquiler/cliente/${dni.value}?estado=1`;
       fetch(url)
       .then(response =>{
         if(response.ok){
@@ -36,7 +36,7 @@ const search = () => {
           .then(data => {
             data.forEach(e => {
               count++;
-                principal.innerHTML+=Card2(e.libro.titulo, e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString())
+                principal.innerHTML+=Card2(e.libro.titulo.toUpperCase(), e.libro.autor.toUpperCase(),e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString())
                 });
                 Modal2('Tiene '+count+' reservas activas')
                 botones = null;
@@ -61,13 +61,13 @@ const search2 = () => {
   principal.innerHTML =null;
   if(dni.value!=""){
       let count = 0;
-      var url = `https://localhost:7032/api/alquiler/cliente/${dni.value}?estado=1`;
+      var url = `${urlApi}alquiler/cliente/${dni.value}?estado=1`;
       fetch(url)
       .then(response => response.json())
       .then(data => {
         data.forEach(e => {
           count++;
-            principal.innerHTML+=Card2(e.libro.titulo.toUpperCase(), e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString())
+            principal.innerHTML+=Card2(e.libro.titulo.toUpperCase(), e.libro.autor.toUpperCase(),e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString())
             });
             botones = null;
             botones = document.querySelectorAll(".botones");
@@ -94,7 +94,7 @@ const cuandoSeHaceClick = function (evento) {
             clienteDNI: dni.value,
             isbn: this.id
           }
-    fetch(`https://localhost:7032/api/alquiler`,{
+    fetch(`${urlApi}alquiler`,{
         method: 'PUT',
           headers: {
             'Accept': 'application/json',

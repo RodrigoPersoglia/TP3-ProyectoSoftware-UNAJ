@@ -1,4 +1,4 @@
-import {NavMenu,Footer,Card5,Card6,botonRedireccion} from './components.js'
+import {NavMenu,Footer,Card5,Card6,botonRedireccion,urlApi} from './components.js'
 import {redireccion} from './redirecciones.js'
 
 const header = document.getElementById("header");
@@ -33,7 +33,7 @@ const reservar = ()=> {
         "fechaAlquiler": null,
         "fechaReserva": new Date().toISOString()
     }
-    fetch(`https://localhost:7032/api/alquiler`,{
+    fetch(`${urlApi}alquiler`,{
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -50,14 +50,13 @@ const reservar = ()=> {
 
 
 const alquilar = ()=> {
-
     let Data ={
         "clienteDNI": dniInput.value,
         "isbn": isbn,
         "fechaAlquiler": new Date().toISOString(),
         "fechaReserva": null
     }
-    fetch(`https://localhost:7032/api/alquiler`,{
+    fetch(`${urlApi}alquiler`,{
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -98,7 +97,7 @@ function getQueryParams() {
 
 const search = (titulo) => {
     principal.innerHTML =null;
-    var url = `https://localhost:7032/api/libros?titulo=${titulo}`;
+    var url = `${urlApi}libros?titulo=${titulo}`;
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -111,7 +110,7 @@ const search = (titulo) => {
 
 const search2 = (autor) => {
     Relacionados.innerHTML=null;
-    var url = `https://localhost:7032/api/libros?nombre=${autor}`;
+    var url = `${urlApi}libros?nombre=${autor}`;
     fetch(url)
     .then(response => response.json())
     .then(data => {

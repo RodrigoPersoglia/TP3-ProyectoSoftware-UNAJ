@@ -10,7 +10,7 @@ cursor: pointer;
 
 
 main{
-    padding-top: 1rem;
+    padding-top: 3rem;
     display: flex;
     justify-content: space-evenly;
     min-height: calc(100vh - 4rem);
@@ -39,6 +39,7 @@ label{
     width: 200px;
     height: 30px;
     margin-left: 0.5rem;
+    text-align: center;
 }
 
 a{
@@ -56,12 +57,6 @@ a{
     border-radius: 10px;    
 }
 
-.Libro:hover{   
-    cursor: pointer;
-    border: 1px solid gray;
-    transition: 0.5s;
-    background-color:#444444;
-}
 
 .Titulo{
     width: 50vw;

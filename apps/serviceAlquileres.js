@@ -1,4 +1,4 @@
-import {NavMenu,Footer,Card3,bienvenida} from './components.js'
+import {NavMenu,Footer,Card3,bienvenida,urlApi} from './components.js'
 import {redireccion} from './redirecciones.js'
 
 const header = document.getElementById("header");
@@ -23,7 +23,7 @@ const search = () => {
     principal.innerHTML =null;
   if(dni.value!=""){
       let count = 0;
-      var url = `https://localhost:7032/api/alquiler/cliente/${dni.value}?estado=2`;
+      var url = `${urlApi}alquiler/cliente/${dni.value}?estado=2`;
       fetch(url)
       .then(response =>{
         if(response.ok){
@@ -31,7 +31,7 @@ const search = () => {
           .then(data => {
             data.forEach(e => {
               count++;
-                principal.innerHTML+=Card3(e.libro.titulo.toUpperCase(), e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString(),new Date(e.fechaAlquiler).toLocaleDateString())
+                principal.innerHTML+=Card3(e.libro.titulo.toUpperCase(), e.libro.autor.toUpperCase(),e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaReserva).toLocaleDateString(),new Date(e.fechaAlquiler).toLocaleDateString())
                 });Modal2('Tiene '+count+' alquileres registrados');
                 if(count===0){Modal2('No hay alquileres del cliente ingresado');Bienvenida()}
             });
@@ -48,13 +48,13 @@ const search2 = () => {
     principal.innerHTML =null;
     if(dni.value!=""){
         let count = 0;
-        var url = `https://localhost:7032/api/alquiler/cliente/${dni.value}?estado=2`;
+        var url = `${urlApi}alquiler/cliente/${dni.value}?estado=2`;
         fetch(url)
         .then(response => response.json())
         .then(data => {
         data.forEach(e => {
             count++;
-            principal.innerHTML+=Card3(e.libro.titulo, e.libro.autor,e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaAlquiler).toLocaleDateString(),new Date(e.fechaDevolucion).toLocaleDateString())
+            principal.innerHTML+=Card3(e.libro.titulo.toUpperCase(), e.libro.autor.toUpperCase(),e.libro.isbn,e.libro.editorial,e.libro.edicion,e.libro.imagen,new Date(e.fechaAlquiler).toLocaleDateString(),new Date(e.fechaDevolucion).toLocaleDateString())
             });
             if(count===0){Modal2('No hay alquileres del cliente ingresado');Bienvenida()} 
       });
