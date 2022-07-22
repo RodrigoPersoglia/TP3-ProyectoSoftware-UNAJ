@@ -189,4 +189,11 @@ export const botonRedireccion = (redireccion,dni) => {
 
 
 
-export const urlApi= 'https://localhost:7032/api/';;
+export const urlApi= 'https://localhost:7032/api/';
+
+export const Autores = (autor,nombre) => {
+    return `<div class="Autores">
+    <div class="AutorFoto" style="background-image:url(../Autores/${autor}.jpg);" onclick="location.href='./listado.html?autor=${autor}'"></div>
+    <div class="AutorDescripcion"><h3>${nombre}</h3></div>
+</div>`
+}
